@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script language="JavaScript" src="converter.js"></script>
+    <script language="JavaScript" src="astronomy.js"></script>
+
+</head>
+<body>
+
+<input type="text" id="year" value="2013">
+<input type="text" id="month" value="8">
+<input type="text" id="day" value="4">
+<input type="button" id="submit" value="convert" onclick="update();">
+<p>Persian date: <span id="persian"></span></p>
+<p>Persian Astronomical date: <span id="persiana"></span></p>
+</body>
+<script language="JavaScript">
+    function update(){
+        var year = Number(document.getElementById("year").value);
+        var month = Number(document.getElementById("month").value);
+        var day = Number(document.getElementById("day").value);
+        var persian = convertGregorianToPersian(year, month, day);
+        var persiana = convertGregorianToPersianAstronomical(year, month, day);
+        document.getElementById("persian").innerText=
+                persian[0]+'/'+persian[1]+'/'+persian[2];
+        document.getElementById("persiana").innerText=
+                persiana[0]+'/'+persiana[1]+'/'+persiana[2];
+    }
+
+</script>
+</html>
