@@ -277,10 +277,10 @@ function convertGregorianToPersian(year, month, day){
     var j;
 
     //  Update Julian day
-    j = gregorianToJd(year, month + 1, day);
+    j = gregorianToJd(year, month, day);
 
     var perscal = jdToPersian(j);
-    perscal[1] = perscal[1] - 1;
+    perscal[1] = perscal[1];
     return perscal
 }
 
@@ -295,9 +295,9 @@ function convertGregorianToPersianAstronomical(year, month, day){
     var j;
 
     //  Update Julian day
-    j = gregorianToJd(year, month + 1, day);
+    j = gregorianToJd(year, month, day);
 
     var perscal = jdToPersianAstronomical(j);
-    perscal[1] = perscal[1] - 1;
+    perscal[1] = perscal[1];
     return perscal
 }
